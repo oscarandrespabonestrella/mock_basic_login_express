@@ -13,7 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-app.post('/auth', function(request, response) {	
+app.post('/auth', function (request, response) {	
+    response.set('Access-Control-Allow-Origin', 'http://localhost:4200');
 	let username = request.body.username;
 	let password = request.body.password;	
     if (username && password) {                
